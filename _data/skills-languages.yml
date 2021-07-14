@@ -7,11 +7,8 @@
 - name: MS SQL Server
   weight: 4
 
-- name: MongoDB
-  weight: 2
-
 - name: MySQL
-  weight: 1
+  weight: 2
 
 - name: MongoDB
   weight: 2
