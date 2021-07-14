@@ -82,7 +82,13 @@ function jekyll(done) {
   return cp
     .spawn(
       'bundle',
-      [ 'exec', 'jekyll', 'build', '--incremental', '--config=_config.yml' ],
+      [
+        'exec',
+        'jekyll',
+        'build',
+        '--incremental',
+        '--config=_config.yml,_config_dev.yml'
+      ],
       {
         stdio: 'inherit'
       }
@@ -96,7 +102,7 @@ function jekyll(done) {
  */
 function watchData() {
   gulp.watch(
-    [ '_data/*.yml', '_config.yml' ],
+    [ '_data/*.yml', '_config.yml', 'assets/*.json' ],
     gulp.series(jekyll, browserSyncReload)
   );
 }
