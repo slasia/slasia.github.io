@@ -10,6 +10,16 @@
 		$body = $('body'),
 		$html = $('html');
 
+	//Personal Text 
+	
+	$(".personalLink").hover(function(){
+		$("#personalInfo").html($(this).attr("data-text"))
+		$("#personalInfo").removeClass("hidden")
+
+	}, function(){
+		$("#personalInfo").addClass("hidden")
+	})
+
 	// Breakpoints.
 		breakpoints({
 			large:   [ '981px',  '1680px' ],
